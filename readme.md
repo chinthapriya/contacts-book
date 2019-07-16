@@ -1,34 +1,30 @@
-## Laravel 5.5 Import CSV Demo
+# contacts-book
+My first Laravel Project
 
-Simple project showing how to import data from CSV file, also matching CSV columns with database columns.
+serve this using ```php artisan serve --host=<your ip> --port:<port number>```
 
-Also showing how to deal with CSV files with/without header rows, using plain PHP functions and [maatwebsite/excel package](https://github.com/Maatwebsite/Laravel-Excel).
-
-![Laravel Import CSV](https://laraveldaily.com/wp-content/uploads/2018/11/import-csv.png)
-
----
-
-### How to use
-
-- Clone the repository with __git clone__
-- Copy __.env.example__ file to __.env__ and edit database credentials there
-- Run __composer install__
-- Run __php artisan key:generate__
-- Run __php artisan migrate__
+How to Use:
+- Clone the repository with git clone
+- Make necessary chenges in DB section of .env file
+- Run `composer install`
+- Run `php artisan key:generate`
+- Run `php artisan migrate`
 - That's it - load the homepage
 
----
+This project involves an application with the following functionalities:
+- Signup using email (unique) + password (strength). 
+- Reset password functionality using email.
+- Data entry using CSV:
+- User will able to upload a CSV file containing information of people which would be contacted by him. (Includes name, email, contact number, address and PIN Code).
+- Email addresses of the people under a user are unique (Same email address cannot be repeated under different users)
 
-### License
+- User Permissions:
+    - Normal: Can upload CSV, View and Edit all the rows under him.
+    - Moderator: Can view the rows under any user but can not edit them.
+    - Admin: Can view and edit data under any user.
 
-Please use and re-use however you want.
-
----
-
-## More from our LaravelDaily Team
-
-- Read our [Daily Blog with Laravel Tutorials](https://laraveldaily.com)
-- FREE E-book: [50 Laravel Quick Tips (and counting)](https://laraveldaily.com/free-e-book-40-laravel-quick-tips-and-counting/)
-- Check out our adminpanel generator QuickAdminPanel: [Laravel version](https://quickadminpanel.com) and [Vue.js version](https://vue.quickadminpanel.com)
-- Subscribe to our [YouTube channel Laravel Business](https://www.youtube.com/channel/UCTuplgOBi6tJIlesIboymGA)
-- Enroll in our [Laravel Online Courses](https://laraveldaily.teachable.com/)
+- View and Edit data:
+    - User can add, view, edit or delete the data they have uploaded or added
+    - Admin can add, view, edit or delete the data under any type of user
+    - Moderator can only view data under any user
+- Any task such as uploading a csv or viewing the database can be done only after logging in.
